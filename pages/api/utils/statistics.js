@@ -1,14 +1,16 @@
 import * as ss from 'simple-statistics'
 
-const calcStats = (data) => {
+export const calcZscore = (data, value) => {
 
     const mean = ss.mean(data)
-    const median = ss.median(data)
-    const variance = ss.variance(data)
     const standardDeviation = ss.standardDeviation(data)
 
-    return {mean, median, variance, standardDeviation}
+    const zScore = (value - mean) / standardDeviation
+
+    return {zScore}
 }
 
-
-export default calcStats
+export const calcCandidatePercentile = (data, candidateScore) => {
+    const rank = ss.quantileRank(data, candidateScore)
+    return rank
+}

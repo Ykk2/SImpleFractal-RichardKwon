@@ -73,7 +73,7 @@ const filteredResults = (candidateId) => {
     const similarCompanies = filterCompanyByFractalIndex(candidateCompanyId, companies)
     const filteredScoresByCompany = filterScoresByCompanyId(similarCompanies, scores)
     const filteredScoresByJob = filterScoresByJobTitle(filteredScoresByCompany, candidateJobTitle)
-    return filteredScoresByJob
+    return [filteredScoresByJob, candidate]
 }
 
 export default filteredResults
