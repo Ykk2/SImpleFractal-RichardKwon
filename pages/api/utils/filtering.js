@@ -33,7 +33,6 @@ const findCandidateInfo = (candidateId, candidates) => {
 }
 
 const filterCompanyByFractalIndex = (companyId, data) => {
-
     let targetFractalIdx = null
     const similarCompanies = {}
 

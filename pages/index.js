@@ -4,7 +4,7 @@ import styles from './main.module.css'
 
 export default function Home() {
 
-    const [candidateId, setCandidateId] = useState(undefined)
+    const [candidateId, setCandidateId] = useState("")
     const [candidate, setCandidate] = useState(null)
     const [codingStats, setCodingStats] = useState(null)
     const [commStats, setCommstats] = useState(null)
@@ -18,7 +18,7 @@ export default function Home() {
             setCommstats({ commZscore, commPercentile })
             setCandidate(candidateInfo)
         } catch (err) {
-            console.log(err)
+            alert("Please verify the candidate's id. Candidate was not found")
         }
     }
 
@@ -35,17 +35,17 @@ export default function Home() {
         <div className={styles.main}>
             <div>
                 <h1>Reference Guide</h1>
-                <p>The values below represent a candidate's coding and communication score.
-                    <br/>
-                    The candidate was scored against peers from similar companies and same job title.
-                </p>
                 <p>Percentiles are presented in decimal percentages on a scale of 0 - 1.
                 <br/>
-                    A score closer to 1 means the candidate is ranked higher than his/her peers.
+                A score closer to 1 means the candidate is ranked higher than his/her peers.
                 </p>
                 <p>Zscores present the relative distance of a candidate's score vs the average.
-                    <br/>
-                    The values range from -3 to 3 with a value of 0 representing the average
+                <br/>
+                The values range from -3 to 3 with a value of 0 representing the average
+                </p>
+                <p>The values below represent a candidate's coding and communication score compared to his/her peers.
+                <br/>
+                The candidate was scored against peers from similar companies and same job title.
                 </p>
             </div>
             <form onSubmit={handleSubmit}>
