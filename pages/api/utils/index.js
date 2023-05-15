@@ -2,12 +2,14 @@ import filteredResults from "./filtering.js";
 import {calcZscore, calcCandidatePercentile } from "./statistics.js";
 
 
+//extracts scores by property/column from data
 const extractScores = (data, property) => {
     let res = []
     data.forEach((item) => res.push(item[property]))
     return res
 }
 
+//runs all statistical calculations and returns an array of stats, data, and candidate info
 export default function calculatePercentiles(candidateId) {
 
     const [results, candidate] = filteredResults(candidateId)

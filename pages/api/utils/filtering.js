@@ -63,6 +63,8 @@ const filterScoresByJobTitle = (candidates, title) =>  {
     return filteredScores
 }
 
+
+//main function of this file that aggregates all functions and returns an array with two objects: filtered data, candidate
 const filteredResults = (candidateId) => {
     const companies = parseCompanyData()
     const scores = parseScoreData()
