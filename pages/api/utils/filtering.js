@@ -11,7 +11,7 @@ const parseOptions = {
 //each object is a company and contains k, v pair where k is column and v is the value
 
 const parseCompanyData = () => {
-    const csvPath = path.join(process.cwd(), '../', 'data', 'companies.csv');
+    const csvPath = path.join(process.cwd(), 'pages', 'api', 'data', 'companies.csv');
     const file = fs.readFileSync(csvPath, { encoding: 'utf-8' })
     const data = Papa.parse(file, parseOptions).data;
     return data
@@ -21,14 +21,14 @@ const parseCompanyData = () => {
 //each object is a candidate and contains contains k, v pair where k is column and v is the value
 
 const parseScoreData = () => {
-    const csvPath = path.join(process.cwd(), '../', 'data', 'scores.csv');
+    const csvPath = path.join(process.cwd(), 'pages', 'api', 'data', 'scores.csv');
     const file = fs.readFileSync(csvPath, { encoding: 'utf-8' });
     const data = Papa.parse(file, parseOptions).data;
     return data
 }
 
 const findCandidateInfo = (candidateId, candidates) => {
-    const candidate = candidates.find(candidate => candidate['candidate_id'] === candidateId)
+    const candidate = candidates.find(candidate => candidate['candidate_id'] == candidateId)
     return candidate ? candidate : 'Candidate not found'
 }
 

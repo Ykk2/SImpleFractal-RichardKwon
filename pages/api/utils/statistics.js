@@ -7,10 +7,10 @@ export const calcZscore = (data, value) => {
 
     const zScore = (value - mean) / standardDeviation
 
-    return {zScore}
+    return zScore.toFixed(2)
 }
 
 export const calcCandidatePercentile = (data, candidateScore) => {
     const rank = ss.quantileRank(data, candidateScore)
-    return rank
+    return rank.toFixed(2)
 }
