@@ -1,4 +1,4 @@
-import filteredResults from "./filtering.js";
+import {filteredResults} from "./filtering.js";
 import {calcZscore, calcCandidatePercentile } from "./statistics.js";
 
 

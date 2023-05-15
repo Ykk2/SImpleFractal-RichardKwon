@@ -27,12 +27,12 @@ const parseScoreData = () => {
     return data
 }
 
-const findCandidateInfo = (candidateId, candidates) => {
+export const findCandidateInfo = (candidateId, candidates) => {
     const candidate = candidates.find(candidate => candidate['candidate_id'] == candidateId)
     return candidate ? candidate : 'Candidate not found'
 }
 
-const filterCompanyByFractalIndex = (companyId, data) => {
+export const filterCompanyByFractalIndex = (companyId, data) => {
     let targetFractalIdx = null
     const similarCompanies = {}
 
@@ -53,19 +53,19 @@ const filterCompanyByFractalIndex = (companyId, data) => {
     return similarCompanies
 }
 
-const filterScoresByCompanyId = (companies, scores) => {
+export const filterScoresByCompanyId = (companies, scores) => {
     const filteredScores = scores.filter((score) => companies[score['company_id']])
     return filteredScores
 }
 
-const filterScoresByJobTitle = (candidates, title) =>  {
+export const filterScoresByJobTitle = (candidates, title) =>  {
     const filteredScores = candidates.filter((candidate) => candidate['title'] == title)
     return filteredScores
 }
 
 
 //main function of this file that aggregates all functions and returns an array with two objects: filtered data, candidate
-const filteredResults = (candidateId) => {
+export const filteredResults = (candidateId) => {
     const companies = parseCompanyData()
     const scores = parseScoreData()
     const candidate = findCandidateInfo(candidateId, scores)
@@ -76,5 +76,3 @@ const filteredResults = (candidateId) => {
     const filteredScoresByJob = filterScoresByJobTitle(filteredScoresByCompany, candidateJobTitle)
     return [filteredScoresByJob, candidate]
 }
-
-export default filteredResults
