@@ -35,13 +35,13 @@ export default function Home() {
         <div className={styles.main}>
             <div>
                 <h1>Reference Guide</h1>
-                <p>Percentiles are presented in decimal percentages on a scale of 0 - 1.
+                <p>Percentiles are presented in decimal percentages on a scale of 0 to 1.
                 <br/>
                 A score closer to 1 means the candidate is ranked higher than his/her peers.
                 </p>
                 <p>Zscores present the relative distance of a candidate's score vs the average.
                 <br/>
-                The values range from -3 to 3 with a value of 0 representing the average
+                The values range from -3 to 3 with a value of 0 representing the average.
                 </p>
                 <p>The values below represent a candidate's coding and communication score compared to his/her peers.
                 <br/>
