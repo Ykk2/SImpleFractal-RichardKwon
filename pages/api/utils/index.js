@@ -1,4 +1,4 @@
-import {filteredResults} from "./filtering.js";
+import { filteredResults }  from "./filtering.js";
 import {calcZscore, calcCandidatePercentile } from "./statistics.js";
 
 
@@ -11,7 +11,6 @@ const extractScores = (data, property) => {
 
 //runs all statistical calculations and returns an array of stats, data, and candidate info
 export default function calculatePercentiles(candidateId) {
-
     const [results, candidate] = filteredResults(candidateId)
     const codingScores = [...extractScores(results, 'coding_score')]
     const communicationScores = [...extractScores(results, 'communication_score')]

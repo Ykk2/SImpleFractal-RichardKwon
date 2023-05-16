@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Table from './components/table'
 import styles from './main.module.css'
 
